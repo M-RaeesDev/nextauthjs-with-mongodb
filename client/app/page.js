@@ -1,103 +1,64 @@
 import Image from "next/image";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero Section */}
+      <main className="flex flex-col md:flex-row items-center justify-center flex-grow p-8">
+        {/* Left Content */}
+        <div className="max-w-lg space-y-6">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-indigo-700 leading-tight">
+            Welcome to Your  
+            <span className="text-indigo-500"> NextAuth.js </span>  
+            Google Login Guide
+          </h2>
+          <p className="text-gray-600 text-lg">
+            This page shows you how to integrate Google Login with NextAuth.js in a clean and simple way.  
+            Follow the steps below to connect your app with Google authentication.
+          </p>
+
+          {/* Step-by-Step Guide */}
+          <div className="space-y-4">
+            <div className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+              <h3 className="font-semibold text-indigo-600">1. Install NextAuth.js</h3>
+              <p className="text-gray-600 text-sm">Run <code className="bg-gray-100 px-1 rounded">npm install next-auth</code></p>
+            </div>
+            <div className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+              <h3 className="font-semibold text-indigo-600">2. Setup API Route</h3>
+              <p className="text-gray-600 text-sm">Create <code className="bg-gray-100 px-1 rounded">/pages/api/auth/[...nextauth].ts</code> and configure the Google provider.</p>
+            </div>
+            <div className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+              <h3 className="font-semibold text-indigo-600">3. Add Google Credentials</h3>
+              <p className="text-gray-600 text-sm">Get <strong>Client ID</strong> & <strong>Client Secret</strong> from Google Cloud Console and add them to <code className="bg-gray-100 px-1 rounded">.env.local</code>.</p>
+            </div>
+            <div className="p-4 bg-white rounded-xl shadow hover:shadow-lg transition">
+              <h3 className="font-semibold text-indigo-600">4. Use signIn("google")</h3>
+              <p className="text-gray-600 text-sm">Call <code className="bg-gray-100 px-1 rounded">signIn("google")</code> in your login button to trigger Google login.</p>
+            </div>
+          </div>
+
+          {/* Placeholder Button */}
+          <button className="mt-6 w-full md:w-auto px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition shadow-lg">
+            Continue with Google
+          </button>
+        </div>
+
+        {/* Right Image */}
+        <div className="mt-10 md:mt-0 md:ml-16">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png"
+            alt="Google Login Illustration"
+            className="w-72 md:w-96 drop-shadow-lg"
+          />
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="bg-white text-center py-4 text-gray-500 text-sm shadow-inner">
+        © {new Date().getFullYear()} My Next.js App. Built with ❤️ for developers.
       </footer>
     </div>
   );
 }
+
