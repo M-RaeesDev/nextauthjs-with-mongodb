@@ -23,7 +23,7 @@ export default function LoginPage() {
         <form onSubmit={handleLogin} className="space-y-5">
           {/* Email */}
           <div>
-            <label className="block text-gray-600 text-sm mb-1">Email</label>
+            <label className="block  text-sm mb-1">Email</label>
             <input
               type="email"
               value={email}
@@ -36,7 +36,7 @@ export default function LoginPage() {
 
           {/* Password */}
           <div>
-            <label className="block text-gray-600 text-sm mb-1">Password</label>
+            <label className="block  text-sm mb-1">Password</label>
             <input
               type="password"
               value={password}
@@ -72,7 +72,7 @@ export default function LoginPage() {
         {/* Footer */}
         <p className="text-sm text-gray-500 text-center mt-6">
           Don’t have an account?{" "}
-          <a href="/" className="text-indigo-600 hover:underline">
+          <a href="/logout" className="text-indigo-600 hover:underline">
             Sign up
           </a>
         </p>
