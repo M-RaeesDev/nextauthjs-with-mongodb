@@ -27,7 +27,7 @@ export default function SignupPage() {
             <input
               type="text"
               placeholder="Muhammad Raees"
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
+              className="w-full px-4 py-2.5 text-gray-500 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
               required
             />
           </div>
@@ -38,19 +38,19 @@ export default function SignupPage() {
             <input
               type="email"
               placeholder="you@example.com"
-              className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
+              className="w-full px-4 py-2.5 text-gray-500 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition"
               required
             />
           </div>
 
           {/* Password */}
           <div>
-            <label className="block text-sm  mb-1">Password</label>
+            <label className="block text-sm text-gray-500 mb-1">Password</label>
             <div className="relative">
               <input
                 type={showPass ? "text" : "password"}
                 placeholder="••••••••"
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition pr-12"
+                className="w-full px-4 py-2.5 text-gray-500 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition pr-12"
                 required
               />
               <button
@@ -62,25 +62,25 @@ export default function SignupPage() {
                 {showPass ? "Hide" : "Show"}
               </button>
             </div>
-            <p className="text-xs  mt-1">
+            <p className="text-xs text-gray-500 mt-1">
               Use at least 8 characters with a mix of letters & numbers.
             </p>
           </div>
 
           {/* Confirm Password */}
           <div>
-            <label className="block text-sm mb-1">Confirm Password</label>
+            <label className="block text-gray-500 text-sm mb-1">Confirm Password</label>
             <div className="relative">
               <input
                 type={showCPass ? "text" : "password"}
                 placeholder="••••••••"
-                className="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition pr-12"
+                className="w-full px-4 py-2.5 text-gray-500 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none transition pr-12"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowCPass((s) => !s)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-indigo-600 hover:underline"
+                className="absolute text-gray-500 right-3 top-1/2 -translate-y-1/2 text-sm text-indigo-600 hover:underline"
                 aria-label="Toggle password visibility"
               >
                 {showCPass ? "Hide" : "Show"}
@@ -90,10 +90,10 @@ export default function SignupPage() {
 
           {/* Terms */}
           <label className="flex items-start gap-3 text-sm ">
-            <input type="checkbox" className="mt-1 h-4 w-4 rounded border-gray-300" required />
-            <span>
+            <input type="checkbox" className="mt-1 h-4 w-4 rounded text-indigo-600 border-gray-300" required />
+            <span className="text-indigo-600  hover:underline">
               I agree to the{" "}
-              <a href="/terms" className="text-indigo-600 hover:underline">
+              <a href="/terms" className="text-indigo-600  hover:underline">
                 Terms & Conditions
               </a>{" "}
               and{" "}
@@ -115,21 +115,21 @@ export default function SignupPage() {
         {/* Divider */}
         <div className="flex items-center my-6">
           <hr className="flex-grow border-gray-300" />
-          <span className="px-3  text-sm">OR</span>
+          <span className="px-3 text-gray-500 text-sm">OR</span>
           <hr className="flex-grow border-gray-300" />
         </div>
 
         {/* Social Signup Placeholder */}
         <button
-          className="w-full flex items-center justify-center gap-2 border border-gray-300 py-2.5 rounded-lg hover:bg-gray-50 transition"
+          className="w-full flex items-center text-gray-500 justify-center gap-2 border border-gray-300 py-2.5 rounded-lg hover:bg-gray-50 transition"
           // onClick={() => signIn("google")}  // logic intentionally omitted
         >
-          <img src="/google.svg" alt="Google" className="w-5 h-5" />
+          <img src="/google.svg" alt="Google" className="w-5 h-5 " />
           Continue with Google
         </button>
 
         {/* Footer */}
-        <p className="text-sm  text-center mt-6">
+        <p className="text-sm text-gray-500 text-center mt-6">
           Already have an account?{" "}
           <a href="/login" className="text-indigo-600 hover:underline">
             Log in
