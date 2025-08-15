@@ -1,4 +1,5 @@
 "use client";
+import ContinueGoogleBtn from "@/components/ContinueGoogle";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -19,6 +20,8 @@ export default function LoginPage() {
         <p className="text-gray-500 text-center mb-8">
           Please login to your account
         </p>
+
+        <div className="flex items-center justify-center h-full"><ContinueGoogleBtn/></div>
 
         <form onSubmit={handleLogin} className="space-y-5">
           {/* Email */}
@@ -62,12 +65,6 @@ export default function LoginPage() {
           <span className="px-3 text-gray-500 text-sm">OR</span>
           <hr className="flex-grow border-gray-300" />
         </div>
-
-        {/* Social Login */}
-        <button className="w-full flex text-gray-500 items-center justify-center gap-2 border border-gray-300 py-2 rounded-lg hover:bg-gray-50 transition">
-          <img src="/google.svg" alt="Google" className="w-5 h-5" />
-          Continue with Google
-        </button>
 
         {/* Footer */}
         <p className="text-sm text-gray-500 text-center mt-6">

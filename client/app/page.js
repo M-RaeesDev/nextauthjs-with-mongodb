@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-indigo-50 via-blue-50 to-sky-100 text-gray-800">
-
       {/* Hero Section */}
       <main className="flex flex-col md:flex-row items-center justify-center flex-grow p-8">
         {/* Left Content */}
@@ -12,9 +11,12 @@ export default function HomePage() {
             👋 Welcome, Developer!
           </h2>
           <p className="text-gray-600 text-lg">
-            Want to learn how to integrate <span className="font-semibold text-indigo-600">Google Login</span> 
-            with <span className="font-semibold text-indigo-600">NextAuth.js</span>?  
-            Login now and get step-by-step guidance with easy-to-follow examples.
+            Want to learn how to integrate{" "}
+            <span className="font-semibold text-indigo-600">Google Login</span>
+            with{" "}
+            <span className="font-semibold text-indigo-600">NextAuth.js</span>?
+            Login now and get step-by-step guidance with easy-to-follow
+            examples.
           </p>
 
           {/* Call to Action */}
@@ -46,10 +48,9 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-white text-center py-4 text-gray-500 text-sm shadow-inner">
-        © {new Date().getFullYear()} NextAuth.js Guide. Built with ❤️ for developers.
+        © {new Date().getFullYear()} NextAuth.js Guide. Built with ❤️ for
+        developers.
       </footer>
     </div>
   );
 }
-
-
