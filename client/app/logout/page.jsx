@@ -80,7 +80,7 @@ export default function SignupPage() {
               <button
                 type="button"
                 onClick={() => setShowCPass((s) => !s)}
-                className="absolute text-gray-500 right-3 top-1/2 -translate-y-1/2 text-sm text-indigo-600 hover:underline"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-indigo-600 hover:underline"
                 aria-label="Toggle password visibility"
               >
                 {showCPass ? "Hide" : "Show"}
