@@ -9,11 +9,7 @@ const authOptions = {
       clientSecret: process.env.GOOGLE_SECRET
     })
   ],
-  session: {
-    strategy: "jwt", // <- yahan set karna hota hai option
-    maxAge: 30 * 24 * 60 * 60 // 30 days
-  },
-
+  
   callbacks: {
     // Triggered every time user logs in
     async signIn({ user, account }) {
