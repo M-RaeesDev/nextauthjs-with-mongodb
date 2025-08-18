@@ -1,49 +1,32 @@
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import api from "../../../../lib/api";
+import axios from "axios";
 
-const authOptions = {
-    providers: [
+const handler = NextAuth({
+  providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_ID,
-      clientSecret: process.env.GOOGLE_SECRET
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET
     })
   ],
-  
   callbacks: {
-    // Triggered every time user logs in
-    async signIn({ user, account }) {
-      if (account.provider === "google") {
-        try {
-          // Send user data to backend API for DB save/check
-          await api.post(`${process.env.SERVER_URL}/api/auth/google`, {
-            name: user.name,
-            email: user.email,
-            image: user.image,
-          });
-        } catch (err) {
-          console.error("Google signup/login failed:", err?.response?.data || err);
-          return false; // stop login if backend fails
-        }
+    async signIn({ user }) {
+      try {
+        await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/users/google`, {
+          name: user.name,
+          email: user.email,
+          image: user.image,
+        });
+        return true;
+      } catch (error) {
+        console.error("Error saving user:", error);
+        return false;
       }
-      return true;
     },
-
-    // Called whenever a session is checked
-    async session({ session, token }) {
-      session.user.id = token.sub; // Add user ID to session
-      return session;
+    async session({ session }) {
+      return session; // add custom fields if needed
     },
   },
+});
 
-  pages: {
-    signIn: "/login", // custom login page
-    error: "/login", // redirect to login on error
-  },
-
-  secret: process.env.NEXTAUTH_SECRET
-};
-
-const handler = NextAuth(authOptions);
-
-export{handler as GET, handler as POST}
+export { handler as GET, handler as POST };

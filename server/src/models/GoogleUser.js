@@ -9,5 +9,4 @@ const GoogleUserSchema = new mongoose.Schema({
 });
 
 // 👉 force collection name "GoogleUser"
-export default mongoose.models.GoogleUser ||
-  mongoose.model("GoogleUser", GoogleUserSchema, "GoogleUser");
+export default mongoose.models.GoogleUser || mongoose.model("GoogleUser", GoogleUserSchema);
