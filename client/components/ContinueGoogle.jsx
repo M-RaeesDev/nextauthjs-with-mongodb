@@ -11,7 +11,7 @@ export default function ContinueGoogleBtn() {
   onClick={() => signIn("google",{ callbackUrl: "/" })} 
   className="flex items-center gap-3 shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-all duration-200"
 >
-  <div className="flex items-center justify-center bg-white py-1">
+  <div className="flex items-center justify-center bg-white">
     <Image 
       src="/google-logo.png" 
       alt="Google" 
