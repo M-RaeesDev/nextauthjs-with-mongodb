@@ -11,7 +11,7 @@ export default function Navbar() {
   const { data: session } = useSession();
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-gray-300 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
@@ -27,7 +27,7 @@ export default function Navbar() {
             {session ? (
               <button
                 onClick={() => signOut({ callbackUrl: "/" })}
-                className="px-4 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 transition"
+                className="px-4 py-2 rounded-md bg-red-500 text-white font-medium hover:bg-red-700 transition"
               >
                 Logout
               </button>
@@ -56,7 +56,7 @@ export default function Navbar() {
           {session ? (
             <button
               onClick={() => signOut({ callbackUrl: "/" })}
-              className="block w-full text-left px-4 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 transition"
+              className="block w-full text-left px-4 py-2 rounded-md bg-red-500 text-white font-medium hover:bg-red-700 transition"
             >
               Logout
             </button>
